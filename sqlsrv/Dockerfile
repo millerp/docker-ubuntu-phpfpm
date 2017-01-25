@@ -15,3 +15,5 @@ RUN cd /tmp/pdo_sqlsrv-4.0.8/ && phpize && ./configure && make && make install
 
 RUN touch /usr/local/etc/php/conf.d/sqlsrv.ini && echo "extension=sqlsrv.so" >> /usr/local/etc/php/conf.d/sqlsrv.ini \
     && echo "extension=pdo_sqlsrv.so" >> /usr/local/etc/php/conf.d/sqlsrv.ini
+
+RUN rm -r /tmp/* && rm -r /var/lib/apt/lists/*
